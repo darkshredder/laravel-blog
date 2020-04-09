@@ -13,26 +13,14 @@
     </div>
     <div class="row">
         <div class="col-md-8">
+            @foreach($posts as $post)
             <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis omnis accusantium, necessitatibus dolores ut, cumque aliquid ullam consequuntur hic, consequatur quaerat tenetur maiores. Illo inventore itaque incidunt esse atque? Commodi?</p>
-                <a href="#" class="btn btn-primary">Read More</a>
+                <h3>{{$post->title}}</h3>
+                <p>{{substr($post->body,0,300)}}</p>
+            <a href="{{url('blog/'.$post->slug)}}" class="btn btn-primary">Read More</a>
             </div>
-            <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis omnis accusantium, necessitatibus dolores ut, cumque aliquid ullam consequuntur hic, consequatur quaerat tenetur maiores. Illo inventore itaque incidunt esse atque? Commodi?</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-            <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis omnis accusantium, necessitatibus dolores ut, cumque aliquid ullam consequuntur hic, consequatur quaerat tenetur maiores. Illo inventore itaque incidunt esse atque? Commodi?</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-            <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis omnis accusantium, necessitatibus dolores ut, cumque aliquid ullam consequuntur hic, consequatur quaerat tenetur maiores. Illo inventore itaque incidunt esse atque? Commodi?</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
+            <hr>
+            @endforeach
     </div>
     <div class="col-md-3 col-md-offset-1">
         <h2>Sidebar</h2>

@@ -6,9 +6,11 @@
             <h1>Create New Post</h1>
             {!! Form::open(['route' => 'posts.store']) !!}
             {{form::label('title', 'Title:')}}
-            {{form::text('title', null,array('class' => 'form-control'))}}
+            {{form::text('title', null, array('class' => 'form-control'))}}
+            {{form::label('slug', 'Slug:')}}
+            {{form::text('slug', null, array('class' => 'form-control'))}}
             {{form::label('body', 'Body:')}}
-            {{form::textarea('body', null,array('class' => 'form-control', 'placeholder' => 'Enter your posts here'))}}
+            {{form::textarea('body', null, array('class' => 'form-control', 'placeholder' => 'Enter your posts here'))}}
             {{form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;'))}}
             {!! Form::close() !!}
         </div>
